@@ -42,7 +42,7 @@ describe('Central de atendimento ao Cliente TAT', () => {
     cy.get('#firstName').type('Teste')
     cy.get('#lastName').type('Teste')
     cy.get('#email').type('teste@teste.com')
-    cy.get('#phone-checkbox').click()
+    cy.get('#phone-checkbox').check()
     cy.get('#open-text-area').type('Criando primeiro teste')
     cy.contains('button', 'Enviar').click()
     cy.get('.error').should('be.visible', 'Valide os campos obrigatórios!')
@@ -68,16 +68,43 @@ describe('Central de atendimento ao Cliente TAT', () => {
     cy.fillMandatoryFieldsAndSubmit()
   })
 
-  it.only('Seleciona um produto (Youtube) por seu texto', () => {
+  it('Seleciona um produto (Youtube) por seu texto', () => {
     cy.get('#product').select('YouTube').should('have.value', 'youtube')
   })
 
-  it.only('Seleciona um produto (Mentoria) por seu valor', () => {
+  it('Seleciona um produto (Mentoria) por seu valor', () => {
     cy.get('#product').select('mentoria').should('have.value', 'mentoria')
   })
 
-  it.only('Seleciona um produto (Blog) por seu indice', () => {
+  it('Seleciona um produto (Blog) por seu indice', () => {
     cy.get('#product').select(1).should('have.value', 'blog')
+  })
+
+  it('Marca o tipo de atendimento "Feedback"', () => {
+    cy.get('input[type="radio"][value="feedback"]').check()
+      .should('have.value', 'feedback')
+  })
+
+  it('Marca cada tipo de atendimento', () => {
+    cy.get('input[type="radio"][value="ajuda"]').check().should('be.checked')
+    cy.get('input[type="radio"][value="elogio"]').check().should('be.checked')
+    cy.get('input[type="radio"][value="feedback"]').check().should('be.checked')
+  })
+
+  it('Marca cada tipo de atendimento com funções each e wrap', () => {
+    cy.get('input[type="radio"]').should('have.length', 3)
+      .each(function($radio) {
+        cy.wrap($radio).check()
+        cy.wrap($radio).should('be.checked')
+      })
+  })
+
+  it.only('Marca ambos checkboxes, depois desmarca o último', () => {
+    cy.get('#check input[type="checkbox"]')
+      .check()
+      .should('be.checked')
+      .last().uncheck()
+      .should('not.be.checked')
   })
 
 })
