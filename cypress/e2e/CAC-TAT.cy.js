@@ -99,7 +99,7 @@ describe('Central de atendimento ao Cliente TAT', () => {
       })
   })
 
-  it.only('Marca ambos checkboxes, depois desmarca o último', () => {
+  it('Marca ambos checkboxes, depois desmarca o último', () => {
     cy.get('#check input[type="checkbox"]')
       .check()
       .should('be.checked')
