@@ -2,28 +2,23 @@
 
 👋 Seja bem-vindo(a)!
 
-É muito bom tê-lo(a) aqui. Tenho certeza que você vai adorar este curso. ❤️
+Projeto desenvolvido durante o curso ministrado pelo Walmyr.
+[Link para o curso] (https://www.udemy.com/course/testes-automatizados-com-cypress-basico/)
+## Pré-requisitos
 
-## O que você vai aprender
+É necessário ter o Node.js, o npm e o Cypress instalado para poder executar esse projeto.
 
-Durante o curso de testes automatizados com Cypress (básico), você vai aprender:
+> Eu usei as versões `v18.12.1` e `8.19.2` do Node.js e npm, respectivamente. Foi utilizado também a versão `v12.3.0` do Cypress. Eu sugiro que você use as mesmas ou versões anteriores.
+Obs: No caso do Cypress versões anteriores a 9 não vai funcionar nesse formato.
+## Instalcação
 
-- Como configurar um projeto Cypress do zero
-- Como visitar páginas locais e remotas
-- Como lidar com os elementos mais comuns encontrados em aplicações web
-- Como testar _upload_ de arquivos
-- Como realizar as mais diversas verificações de resultados esperados
-- Como criar comandos customizados
-- Como lidar com links que abrem em outra aba do navegador
-- Como rodar testes simulando as dimensões de um dispositivo móvel
-- Como resolver os mesmos problemas de diferentes formas, conhecendo a [API do Cypress](https://docs.cypress.io/api/table-of-contents)
-- Como executar os testes em um _pipeline_ de integração contínua sempre que mudanças ocorrerem no código da aplicação (ou dos testes)
-- Como criar uma documentação mínima para seu projeto de testes automatizados
+Execute `npm install` para instalar as dependencias de desenvolvimento.
 
+## Tests
+
+Execute `npm run test` para executar os testes pela interface do Cypress no modo interativo.
+
+Ou, run `npm run cy:open` para executar os testes no modo headless.
 ## Vamos começar?
 
-Vá para a seção [estrutura do curso](./lessons/_course-structure_.md).
-
-___
-
-Este é mais um curso da [**Escola Talking About Testing**](https://udemy.com/user/walmyr).
+Vá para a seção [estrutura do curso](./lessons/_course-structure_.md) se quiser saber detalhadamente como o curso está estruturado.
