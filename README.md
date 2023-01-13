@@ -3,7 +3,7 @@
 👋 Seja bem-vindo(a)!
 
 Projeto desenvolvido durante o curso ministrado pelo Walmyr.
-[Link para o curso] (https://www.udemy.com/course/testes-automatizados-com-cypress-basico/)
+[Link para o curso](https://www.udemy.com/course/testes-automatizados-com-cypress-basico/)
 ## Pré-requisitos
 
 É necessário ter o Node.js, o npm e o Cypress instalado para poder executar esse projeto.
