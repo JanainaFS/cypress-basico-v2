@@ -3,6 +3,7 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
+    config-file: cypress.config.json
     steps:
       - name: Checkout
         uses: actions/checkout@v2
