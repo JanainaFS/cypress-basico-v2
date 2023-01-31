@@ -194,10 +194,14 @@ describe('Central de atendimento ao Cliente TAT', () => {
       })
   })
 
-  it('Encontrando o gato escondido', () => {
+  it.only('Encontrando o gato escondido', () => {
     cy.get('span[id="cat"]')
       .invoke('show')
       .should('be.visible')
+    cy.get('#title')
+      .invoke('text', 'CAT TAT')
+    cy.get('#subtitle')
+      .invoke('text', 'Eu 💚 gatos!')
   })
 
 })
