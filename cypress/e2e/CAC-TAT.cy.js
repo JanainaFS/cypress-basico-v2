@@ -21,7 +21,7 @@ describe('Central de atendimento ao Cliente TAT', () => {
     cy.get('.success').should('not.be.visible')
   })
 
-  it.only('Passando texto longo no campo de texto e alterando a propriedade de delay', () => {
+  it('Passando texto longo no campo de texto e alterando a propriedade de delay', () => {
     const texto = Cypress._.repeat('Estou digitando um texto longo ', 10)
     cy.get('#open-text-area').type(texto, {delay: 0})
   })
@@ -157,6 +157,23 @@ describe('Central de atendimento ao Cliente TAT', () => {
   it('Acessa a página da política de privacidade removendo o target e então clicando no link', () => {
     cy.get('a[href="privacy.html"]').invoke('removeAttr', 'target').click()
     cy.contains('Talking About Testing').should('be.visible')
+  })
+
+  it.only('Exibe e esconde as mensagens de sucesso e erro usando o .invoke', () => {
+    cy.get('.success')
+      .should('not.be.visible')
+      .invoke('show')
+      .should('be.visible')
+      .and('contain', 'Mensagem enviada com sucesso.')
+      .invoke('hide')
+      .should('not.be.visible')
+    cy.get('.error')
+      .should('not.be.visible')
+      .invoke('show')
+      .should('be.visible')
+      .and('contain', 'Valide os campos obrigatórios!')
+      .invoke('hide')
+      .should('not.be.visible')
   })
 
 })
